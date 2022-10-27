@@ -43,7 +43,7 @@ with builtins;
         boot.kernelPackages = kernelPackage;
 
         nixpkgs.pkgs = pkgs;
-        nix.makxJobs = lib.mkDefault cpuCores;
+        nix.maxJobs = lib.mkDefault cpuCores;
 
         system.stateVersion = "22.05";
       }
