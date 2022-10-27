@@ -30,13 +30,14 @@ in
   programs.bash.enable = true;
 
   home.packages = with pkgs; [
-    pkgs.htop
-    tdesktop
-    thunderbird
-    unstable.vivaldi
-    xclip
+    htop
     parcellite
     remmina
+    tdesktop
+    thunderbird
+    tig
+    unstable.vivaldi
+    xclip
   ];
 
   home.shellAliases = {

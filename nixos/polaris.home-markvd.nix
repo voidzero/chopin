@@ -30,8 +30,9 @@ in
   programs.bash.enable = true;
 
   home.packages = with pkgs; [
-    pkgs.htop
-    pkgs.fortune
+    fortune
+    htop
+    tig
   ];
 
   home.shellAliases = {
