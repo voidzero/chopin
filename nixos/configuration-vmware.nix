@@ -312,9 +312,9 @@ in
 
   environment.shellAliases = {
     "1ssh" = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no";
-    "flinksync" = "rsync -ahHAXE --info=stats2,flist2,misc2,progress2 --numeric-ids"
-    "flinkdelsync" = "rsync -ahHAXE --info=stats2,flist2,misc2,progress2 --delete-delay --delay-updates --numeric-ids"
-    "vim" = "vim -p"
+    "flinksync" = "rsync -ahHAXE --info=stats2,flist2,misc2,progress2 --numeric-ids";
+    "flinkdelsync" = "rsync -ahHAXE --info=stats2,flist2,misc2,progress2 --delete-delay --delay-updates --numeric-ids";
+    "vim" = "vim -p";
   };
 
   # }}}
