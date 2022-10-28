@@ -220,6 +220,7 @@ in
     freshfetch
     git
     mc
+    ripgrep
     rsync
     tmux
     vim_configurable
