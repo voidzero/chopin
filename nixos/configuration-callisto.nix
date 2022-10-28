@@ -326,7 +326,7 @@ in
         "brackets"
         "pattern"
         #"regexp"
-        "cursor"
+        #"cursor"
         "root"
       ];
       patterns = {
