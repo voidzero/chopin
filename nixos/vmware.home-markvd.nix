@@ -35,6 +35,9 @@ in
     parcellite
     remmina
     tdesktop
+    terminus-nerdfont
+    terminus_font
+    terminus_font_ttf
     thunderbird
     tig
     unstable.vivaldi
