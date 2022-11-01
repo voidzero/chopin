@@ -209,6 +209,9 @@ in
     unzip
     zip
 
+    # vim stuff
+    vimPlugins.terminus
+
     # zsh stuff
     zsh
     oh-my-zsh
