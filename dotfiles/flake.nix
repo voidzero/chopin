@@ -38,7 +38,22 @@
 
     nixosConfigurations = {
       vmware = host.mkHost {
-        # ...
+        name = "nixos-vmware";
+        NICs = [ "ens33" ];
+        kernelPackage = pkgs.linuxPackages;
+        initrdMods = [];
+        kernelMods = [];
+        kernelParams = [];
+        systemConfig = {
+          # foobar
+        };
+        users = [{
+          name = "markvd";
+          groups = [ "wheel" "networkmanager" "users" ];
+          uid = 1000;
+          shell = pkgs.zsh;
+        }];
+        cpuCores = 4;
       };
     };
   };
