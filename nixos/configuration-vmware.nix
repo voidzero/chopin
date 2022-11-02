@@ -162,6 +162,7 @@ in
   services.xserver = {
     layout = "us";
     xkbVariant = "dvorak";
+    xkbOptions = "compose:rctrl,eurosign:5,terminate:ctrl_alt_bksp";
   };
 
   # Enable automatic login for the user.
