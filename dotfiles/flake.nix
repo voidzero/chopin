@@ -47,7 +47,7 @@
         pkgs = legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main home-manager configuration file <
-        modules = [ ./home-manager/home.nix ];
+        modules = [ ./home-manager/home-markvd.nix ];
       };
     };
   };
