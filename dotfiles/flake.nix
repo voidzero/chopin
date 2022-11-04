@@ -41,7 +41,7 @@
         name = "nixos-vmware";
         NICs = [ "ens33" ];
         kernelPackage = pkgs.linuxPackages;
-        initrdMods = [];
+        initrdMods = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
         kernelMods = [];
         kernelParams = [];
         systemConfig = {
