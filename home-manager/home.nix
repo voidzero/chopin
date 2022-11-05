@@ -1,9 +1,7 @@
-# vim: ts=2 sw=2 ai et si sta fdm=marker
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, lib, config, pkgs, ... }: 
-{
+{ inputs, lib, config, pkgs, ... }: {
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors), use something like:
     # inputs.nix-colors.homeManagerModule
@@ -13,35 +11,21 @@
 
   # TODO: Set your username
   home = {
-    username = "markvd";
-    homeDirectory = "/home/markvd";
-    stateVersion = "22.11";
-    enableNixpkgsReleaseCheck = true;
-    packages = with pkgs; [
-      htop
-      parcellite
-      remmina
-      tdesktop
-      terminus-nerdfont
-      terminus_font
-      terminus_font_ttf
-      thunderbird
-      tig
-      vivaldi
-      xclip
-    ];
-    shellAliases = {
-      sudol = "sudo login -f root";
-    };
+    username = "your-username";
+    homeDirectory = "/home/your-username";
   };
 
-  # Let Home Manager install and manage itself.
+  # Add stuff for your user as you see fit:
+  # programs.neovim.enable = true;
+  # home.packages = with pkgs; [ steam ];
+
+  # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.zsh.enable = true;
-  programs.bash.enable = true;
   programs.git.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.stateVersion = "22.05";
 }
