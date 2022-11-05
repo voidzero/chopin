@@ -67,6 +67,7 @@
       homeConfigurations = {
         # FIXME replace with your username@hostname
         "markvd@nixos-vmware" = home-manager.lib.homeManagerConfiguration {
+          system = "x86_64-linux";
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules) ++ [
