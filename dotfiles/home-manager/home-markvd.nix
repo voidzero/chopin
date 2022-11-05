@@ -3,9 +3,6 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
 { inputs, lib, config, pkgs, ... }: 
-let
-  unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-in
 {
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors), use something like:
