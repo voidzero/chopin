@@ -53,6 +53,7 @@
       nixosConfigurations = {
         # FIXME replace with your hostname
         "nixos-vmware" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
             # > Our main nixos configuration file <
