@@ -15,7 +15,7 @@
   home = {
     username = "markvd";
     homeDirectory = "/home/markvd";
-    stateVersion = "22.05";
+    stateVersion = "22.11";
     enableNixpkgsReleaseCheck = true;
     packages = with pkgs; [
       htop
@@ -27,7 +27,7 @@
       terminus_font_ttf
       thunderbird
       tig
-      unstable.vivaldi
+      vivaldi
       xclip
     ];
     shellAliases = {
