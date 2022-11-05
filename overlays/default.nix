@@ -1,3 +1,4 @@
+# vim: ts=2 sw=2 ai et si sta fdm=marker
 # This file defines two overlays and composes them
 { inputs, ... }:
 let
@@ -12,5 +13,10 @@ let
     # ...
     # });
   };
+  unstable-overrides = final: prev:
+  let pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${final.system};
+  in {
+    vivaldi-unstable = pkgs-unstable.vivaldi;
+  };
 in
-inputs.nixpkgs.lib.composeManyExtensions [ additions modifications ]
+inputs.nixpkgs.lib.composeManyExtensions [ additions modifications unstable-overrides ]

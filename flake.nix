@@ -1,20 +1,17 @@
 {
-  description = "Your new nix config";
+  description = "Voidzero's shiny nix config";
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    hardware.url = "github:nixos/nixos-hardware";
+    nixpkgs.url  = "github:nixos/nixpkgs/nixos-22.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # TODO: Add any other flake you might need
-    hardware.url = "github:nixos/nixos-hardware";
-
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
+    # Other flakes
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
@@ -55,11 +52,11 @@
 
       nixosConfigurations = {
         # FIXME replace with your hostname
-        your-hostname = nixpkgs.lib.nixosSystem {
+        "nixos-vmware" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues nixosModules) ++ [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./nixos/nixos-vmware/configuration.nix
             # Our common nixpkgs config (unfree, overlays, etc)
             (import ./nixpkgs-config.nix { inherit overlays; })
           ];
@@ -68,12 +65,12 @@
 
       homeConfigurations = {
         # FIXME replace with your username@hostname
-        "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
+        "markvd@nixos-vmware" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
           modules = (builtins.attrValues homeManagerModules) ++ [
             # > Our main home-manager configuration file <
-            ./home-manager/home.nix
+            ./home-manager/home-markvd.nix
             # Our common nixpkgs config (unfree, overlays, etc)
             (import ./nixpkgs-config.nix { inherit overlays; })
           ];
