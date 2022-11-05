@@ -7,7 +7,7 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # TODO: Add any other flake you might need
@@ -44,6 +44,7 @@
 
     homeConfigurations = {
       "markvd@nixos-vmware" = home-manager.lib.homeManagerConfiguration {
+        system = "x86_64-linux";
         pkgs = legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main home-manager configuration file <
