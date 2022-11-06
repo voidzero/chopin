@@ -1,3 +1,4 @@
+# vim: ts=2 sw=2 ai et si sta fdm=marker
 {
   description = "Voidzero's shiny nix config";
 
