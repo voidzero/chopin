@@ -18,6 +18,8 @@
     stateVersion = "22.05";
     enableNixpkgsReleaseCheck = true;
     packages = with pkgs; [
+      betterdiscordctl
+      discord
       htop
       parcellite
       remmina
