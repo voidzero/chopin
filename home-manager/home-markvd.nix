@@ -1,6 +1,4 @@
 # vim: ts=2 sw=2 ai et si sta fdm=marker
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
 { inputs, lib, config, pkgs, ... }: 
 {
@@ -11,7 +9,6 @@
     # Feel free to split up your configuration and import pieces of it here.
   ];
 
-  # TODO: Set your username
   home = {
     username = "markvd";
     homeDirectory = "/home/markvd";

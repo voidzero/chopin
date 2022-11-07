@@ -1,6 +1,4 @@
 # vim: ts=2 sw=2 ai et si sta fdm=marker
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
 { inputs, lib, config, pkgs, ... }: {
 
@@ -202,9 +200,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
-  # Allow experimental comments
-  #nix.extraOptions = "extra-experimental-features = nix-command flakes";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
