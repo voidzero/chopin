@@ -66,15 +66,18 @@
       };
 
       homeConfigurations = {
-        # FIXME replace with your username@hostname
         "markvd@nixos-vmware" = home-manager.lib.homeManagerConfiguration {
           system = "x86_64-linux";
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            # > Our main home-manager configuration file <
-            ./home-manager/home-markvd.nix
-            # Our common nixpkgs config (unfree, overlays, etc)
+          configuration = ./home-manager/home-markvd.nix;
+          homeDirectory = "/home/markvd";
+          username = "markvd";
+          stateVersion = "22.05";
+          extraModules = (builtins.attrValues homeManagerModules) ++ [
+          #  # > Our main home-manager configuration file <
+          #  ./home-manager/home-markvd.nix
+          #  # Our common nixpkgs config (unfree, overlays, etc)
             (import ./nixpkgs-config.nix { inherit overlays; })
           ];
         };
