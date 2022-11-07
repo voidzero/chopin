@@ -27,7 +27,7 @@
       terminus_font_ttf
       thunderbird
       tig
-      unstable.vivaldi
+      vivaldi-unstable
       xclip
     ];
     shellAliases = {
