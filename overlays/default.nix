@@ -14,7 +14,10 @@ let
     # });
   };
   unstable-overrides = final: prev:
-  let pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${final.system};
+  let pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = final.system;
+    config.allowUnfree = true;
+  };
   in {
     vivaldi-unstable = pkgs-unstable.vivaldi;
   };
